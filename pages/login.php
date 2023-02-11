@@ -13,17 +13,18 @@
         <fieldset class="form-container">
             <img src="../assets/icons8-user-circle-96.png" alt="">
             <h1>Iniciar sessão</h1>
-            <form action="POST" id="form" class="form">
+            <form action="" id="form" class="form" method="POST">
                    
-                    <input type="email" class="input" placeholder="Email">
+                    <input type="email" class="input" placeholder="Email" id="email">
                     <div class="line"></div>
-                    <input type="password" class="input" placeholder="Senha">
+                    <input type="password" class="input" placeholder="Senha" id="senha">
                     <div class="line"></div>
 
-                <button type="submit" class="submit">Entrar</button>
+                <button type="submit" class="submit" id="submit">Entrar</button>
             </form>
         </fieldset>
         
     </main>
+    <script src="../js/login.js"></script>
 </body>
 </html>
