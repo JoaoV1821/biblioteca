@@ -13,7 +13,6 @@ body {
 
 }
 
-
 .form-container {
     display: flex;
     flex-direction: column;
@@ -30,11 +29,10 @@ body {
     font-size: 25px;
 }
 
-
 .input:focus {
     outline: transparent;
     border: none;
-  }
+}
 
 .form {
     display: flex;
@@ -62,7 +60,6 @@ body {
     margin-bottom: 30px;
 
   }
-
 
 .submit {
     border-radius: 20px;

@@ -1,5 +1,5 @@
-const email = document.getElementById("email");
-const senha = document.getElementById("senha");
+const email  = document.getElementById("email");
+const senha  = document.getElementById("senha");
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", (event) => {
@@ -23,7 +23,6 @@ submit.addEventListener("click", (event) => {
         } else {
             console.log(email.value);
             console.log(senha.value);
-        }
-    }
-
+        };
+    };
 });
