@@ -3,7 +3,6 @@ const senha  = document.getElementById("senha");
 const submit = document.getElementById("submit");
 
 submit.addEventListener("click", (event) => {
-    event.preventDefault();
 
     email.value = email.value.trim();
     senha.value = senha.value.trim();

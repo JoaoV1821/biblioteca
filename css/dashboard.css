@@ -2,6 +2,7 @@
 
 body {
     font-family: 'Montsserrat', sans-serif;
+    margin: 0%;
 }
 
 .header {
@@ -10,6 +11,8 @@ body {
     align-items: center;
     justify-content: space-around;
     height: 50px;
+    color: white;
+    background-color: #094275;
 }
 
 .nav-bar {
@@ -18,9 +21,54 @@ body {
     align-items: center;
     justify-content: space-around;
     width: 50%;
+    text-decoration: none;
+}
+
+.nav-bar :hover {
+    font-size: 20px;
+    transition: 0.5s;
 }
 
 
+.nav-bar :visited, :link {
+    text-decoration: none;
+    color: white;
+}
+
+.title {
+    margin-left: 125px;
+    margin-top: 50px;
+    font-size: 40px;
+    color: #094275;
+    font-weight:bold;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 10px;
+    box-shadow: 7px 7px 7px 7px rgba(50, 50, 50, 0.22);
+    padding: 30px;
+    margin: 20px;
+    width: 220px;
+    height: 150px;
+    text-align: center;
+    font-size: 10px;
+    transition: all 0.3s ease-out;
+    color: white;
+    background-color: #094275;
+  }
+
+  .number-card {
+    font-size: 25px;
+  }
+
 .container {
-    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 85px;
+    margin-top: 100px;
 }

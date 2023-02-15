@@ -5,7 +5,7 @@
     --primary: #094275;
     --secondary: #F1F5F4;
     --text-font: #717F7F;
-    --font-family:  'Montserrat', sans-serif;
-
+    --font-family:  'Montserrat', sans-serif;   
     
+    font-family: var(--font-family);
 }
