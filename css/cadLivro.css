@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montsserrat', sans-serif;
+    margin: 0%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 50px;
+    color: white;
+    background-color: #094275;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    text-decoration: none;
+}
+
+.nav-bar :hover {
+    font-size: 20px;
+    transition: 0.5s;
+}
+
+
+.nav-bar :visited, :link {
+    text-decoration: none;
+    color: white;
+}
+
+.title {
+    margin-top: 50px;
+    font-size: 40px;
+    color: #094275;
+    font-weight:bold;
+}
+
+.input:focus {
+    outline: transparent;
+    border: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top:  30px;
+}
+
+.input {
+    border-radius: 20px;
+    border: none;
+    width: 255px;
+    height: 15px;
+    margin-bottom: 10px;
+    padding-left: 15px;
+    font-size: 15px;
+}
+
+.line {
+    width: 250px;
+    height: 0;
+    border: 1px solid #206199;
+    margin-bottom: 30px;
+
+  }
+
+  /* Esconde o input */
+input[type='file'] {
+    display: none;
+    margin-bottom: 10px;
+  }
+  
+  /* Aparência que terá o seletor de arquivo */
+label {
+    background-color: #094275;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    padding: 6px 20px;
+    margin-bottom: 10px;
+    margin-right: 90px;
+  }
+
+
+.submit {
+    border-radius: 20px;
+    width: 100px;
+    height: 50px;
+    background-color: #094275;
+    color: white;
+    font-size: 15px;
+}
