@@ -14,7 +14,7 @@
             <p class="link-nav"><a href="#">Inicio</a></p>
             <p class="link-nav"><a href="livros.php">Livros</a></p>
             <p class="link-nav"><a href="cadLivro.php">Cadastrar livro</a></p>
-            <p class="link-nav"><a href="cadFuncionario.php">Cadastrar funcionário</a></p>
+            <p class="link-nav"><a href="cadFunc.php">Cadastrar funcionário</a></p>
             <p class="link-nav"><a href="emprestimo.php">Empréstimo</a></p>
         </nav>
     </header>

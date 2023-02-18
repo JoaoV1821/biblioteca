@@ -2,7 +2,7 @@ const email  = document.getElementById("email");
 const senha  = document.getElementById("senha");
 const submit = document.getElementById("submit");
 
-submit.addEventListener("click", (event) => {
+submit.addEventListener("click", () => {
 
     email.value = email.value.trim();
     senha.value = senha.value.trim();
@@ -19,9 +19,6 @@ submit.addEventListener("click", (event) => {
         if(!regex.test(email.value)) {
             alert("Email inválido");
 
-        } else {
-            console.log(email.value);
-            console.log(senha.value);
-        };
+        } 
     };
 });

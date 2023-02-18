@@ -25,18 +25,19 @@
         <section class="container">
             <h1 class="title">Novo funcionário</h1>
             <form action="cadFunc.php" id="form" class="form" method="POST">
-                <input type="text" class="input" placeholder="Nome completo" id="nome" value="<?php echo $_POST['nome']?>">
+                <input name='nome' type="text" class="input" placeholder="Nome completo" id="nome" value="<?php echo $_POST['nome']?>">
 
                 <div class="line"></div>
-                <input type="email" class="input" placeholder="Email corporativo" id="email" value="<?php echo $_POST['email']?>">
-                <div class="line"></div>
-                <input type="text" class="input" placeholder="CPF" id="cpf" value="<?php echo $_POST['cpf']?>">
+                <input name='email'type="email" class="input" placeholder="Email corporativo" id="email" value="<?php echo $_POST['email']?>">
 
                 <div class="line"></div>
-                <input type="password" class="input" placeholder="Senha" id="senha" value="<?php echo $_POST['Senha']?>">
+                <input name='cpf' type="text" class="input" placeholder="CPF" id="cpf" value="<?php echo $_POST['cpf']?>">
 
                 <div class="line"></div>
-                <input type="password" class="input" placeholder="Confirme sua senha" id="confSenha" value="<?php echo $_POST['confSenha']?>">
+                <input name='senha' type="password" class="input" placeholder="Senha" id="senha" value="<?php echo $_POST['senha']?>">
+
+                <div class="line"></div>
+                <input name='confSenha'type="password" class="input" placeholder="Confirme sua senha" id="confSenha" value="<?php echo $_POST['confSenha']?>">
 
                 <div class="line"></div>
      
@@ -45,5 +46,6 @@
         </section>
        
     </main>
+    <script src="../js/cadFunc.js"></script>
 </body>
 </html>
