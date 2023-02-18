@@ -18,6 +18,7 @@
 
         if (mysqli_query($conn, $sql)) {
             echo "/R Lo Up";
+            $uploaded = true;
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
@@ -53,12 +54,19 @@
         <section class="container">
             <h1 class="title">Novo funcionário</h1>
             <form action="cadFunc.php" id="form" class="form" method="POST">
-                <input type="text" class="input" placeholder="Nome completo" name="nome" id="nome" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {echo $_POST['nome'];}?>">
+                <input type="text" class="input" placeholder="Nome completo" name="nome" id="nome" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['nome'];}?>
+                ">
 
                 <div class="line"></div>
-                <input type="email" class="input" placeholder="Email corporativo" name="email" id="email" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {echo $_POST['email'];}?>">
+                <input type="email" class="input" placeholder="Email corporativo" name="email" id="email" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['email'];}?>
+                ">
+
                 <div class="line"></div>
-                <input type="text" class="input" placeholder="CPF" name="cpf" id="cpf" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {echo $_POST['cpf'];}?>">
+                <input type="text" class="input" placeholder="CPF" name="cpf" id="cpf" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['cpf'];}?>
+                ">
 
                 <div class="line"></div>
                 <input type="password" class="input" placeholder="Senha" name="senha" id="senha" value="">
