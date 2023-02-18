@@ -1,3 +1,10 @@
+<?php 
+      require("authenticate.php");
+      require("valida_livro.php");
+
+      if (!$login){header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/index.php");}       
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,22 +31,30 @@
         
         <section class="container">
             <h1 class="title">Novo livro</h1>
-            <form action="cadLivro.php" id="form" class="form" method="POST">
-                <input type="text" class="input" placeholder="Titulo" id="titulo" value="<?php echo $_POST['titulo']?>">
+            <form enctype="multipart/form-data" action="cadLivro.php" id="form" class="form" method="POST">
+                <input type="text" class="input" placeholder="Titulo" name="titulo" id="titulo" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['titulo'];}?>
+                ">
 
                 <div class="line"></div>
-                <input type="text" class="input" placeholder="Autor" id="autor" value="<?php echo $_POST['autor']?>">
+                <input type="text" class="input" placeholder="Autor" name="autor" id="autor" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['autor'];}?>
+                ">
 
                 <div class="line"></div>
-                <input type="text" class="input" placeholder="Editora" id="editora" value="<?php echo $_POST['editora']?>">
+                <input type="text" class="input" placeholder="Editora" name="editora" id="editora" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['editora'];}?>
+                ">
 
                 <div class="line"></div>
-                <input type="text" class="input" placeholder="Gênero" id="genero" value="<?php echo $_POST['genero']?>">
+                <input type="text" class="input" placeholder="Gênero" name="genero" id="genero" value="
+                    <?php if ($uploaded) {echo ""} else if ($_SERVER["REQUEST_METHOD"] == "POST" && !$uploaded){echo $_POST['genero'];}?>
+                ">
 
                 <div class="line"></div>
                 
                 <label for="imagem">Upload Imagem</label>
-                <input type="file" class="input" placeholder="Imagem" id="imagem" value="<?php echo $_POST['imagem']?>">
+                <input type="file" class="input" placeholder="Imagem" name="fileToUpload" id="imagem" value=""> 
                 <div class="line"></div>
                     
                 <button type="submit" class="submit" id="submit">Cadastrar</button>
