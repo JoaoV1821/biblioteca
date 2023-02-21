@@ -1,0 +1,52 @@
+.book {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 300px;
+    background-color: var(--secondary);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.info-book {
+    text-align: center;
+    padding-left: 15px;
+}
+
+.img-book > img {
+    width: 130px;
+    height: 175px;
+}
+
+.grid-books {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: space-around;
+    justify-content: space-around;
+    margin-top: 5%;
+}
+
+.options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 40px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.btn {
+    color: white;
+    background-color: var(--primary);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn :visited, :link {
+    text-decoration: none;
+    color: white;
+}

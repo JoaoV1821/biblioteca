@@ -5,7 +5,7 @@ require ("create_db_table.php");
 //----------------------------------VALIDA CAMPOS---------------------------------------------------------//
     $email = "";
     $senha = "";
-    $erro = false;
+    $erro_email = $erro_senha = "";
 
     if (!$login && $_SERVER["REQUEST_METHOD"] == "POST") {
     
@@ -18,56 +18,43 @@ require ("create_db_table.php");
               $email = filter_var($email, FILTER_SANITIZE_EMAIL);
               if (!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 $erro_email = " Endereço de e-mail inválido.";
-                $erro = true;
               }
           }
 
           if(empty($_POST["senha"])){
             $erro_senha = "Senha é obrigatória.";
-            $erro = true;
           }
           else{
-            $senha = $_POST["senha"];
-            //$senha = md5($senha);
+            $senha = md5($_POST["senha"]);
           }
     }
 
     if (!$login && $_SERVER["REQUEST_METHOD"] == "POST") {
 
-        $ntry = 1;
         $conn = connect_db();
         
-        $email = mysqli_real_escape_string($conn,$email);
-        $senha = mysqli_real_escape_string($conn,$senha);
+            $email = mysqli_real_escape_string($conn,$email);
+            $senha = mysqli_real_escape_string($conn,$senha);
 
-        $sql = "SELECT email,senha FROM login";
-        $result = mysqli_query($conn, $sql);
+            $sql = "SELECT email,senha FROM login WHERE email = '$email'";
+            $result = mysqli_query($conn, $sql);
 
-        if (mysqli_num_rows($result) > 0) {
-            while($row = mysqli_fetch_assoc($result)) {
-                $creds = $row["email"] . $row["senha"];               // creds -> credenciais do banco de dados
-                $creds_http = $email . $senha;                        // creds_http -> credenciais recebidas pelo form
-                    if ($creds == $creds_http){ 
-                        $ntry++;                                      // n de tentativas 
-                        echo "no try: " . $ntry . "/";
+            if (mysqli_num_rows($result) > 0) {
+                $row = mysqli_fetch_assoc($result);
+                    if ($row['senha'] == $senha){
                         $_SESSION["email"] = $row["email"];
-                        header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/dashboard.php");
-                        break;
+                        header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/pages/dashboard.php");
                     } 
-                    else if ($ntry == mysqli_num_rows($result)){
-                        $erro = true;
-                        $erro_creds = "E-mail ou senha incorreto(s)";
-                        echo $erro_creds;
-                    }
                     else {
-                        $ntry++;
-                    }
+                        $erro_val = "Email ou senha incorreto(s)";
+                    }                                                                   
+            }                        
+            else {
+                $erro_val = "Email ou senha incorreto(s)";
             }
-        }
-        else {echo "0 results";}
         disconnect_db($conn);
     }
-    if ($login){
-        header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/dashboard.php");  
+    if ($login){ 
+        header("Location: /biblioteca-php/pages/dashboard.php");  
     }
 ?>

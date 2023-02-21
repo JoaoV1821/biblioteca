@@ -5,36 +5,6 @@ body {
     margin: 0%;
 }
 
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 50px;
-    color: white;
-    background-color: #094275;
-}
-
-.nav-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 50%;
-    text-decoration: none;
-}
-
-.nav-bar :hover {
-    font-size: 20px;
-    transition: 0.5s;
-}
-
-
-.nav-bar :visited, :link {
-    text-decoration: none;
-    color: white;
-}
-
 .title {
     margin-left: 125px;
     margin-top: 50px;

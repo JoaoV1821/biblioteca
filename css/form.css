@@ -1,39 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-
-body {
-    font-family: 'Montsserrat', sans-serif;
-    margin: 0%;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    height: 50px;
-    color: white;
-    background-color: #094275;
-}
-
-.nav-bar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 50%;
-    text-decoration: none;
-}
-
-.nav-bar :visited, :link {
-    text-decoration: none;
-    color: white;
-}
-
 .title {
     margin-top: 50px;
-    font-size: 40px;
+    font-size: 30px;
     color: #094275;
     font-weight:bold;
+}
+
+.erro { 
+  color: red;
 }
 
 .input:focus {
@@ -46,6 +19,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
 .form {
     display: flex;
     flex-direction: column;
@@ -89,6 +63,23 @@ label {
     margin-right: 90px;
   }
 
+  .input-livros {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .input-genero {
+    width: 140px;
+    padding-left: 0%;
+  }
+
+  select {
+    width: 100px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    padding: 2px;
+  }
 
 .submit {
     border-radius: 20px;
